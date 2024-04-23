@@ -6,14 +6,11 @@ const router = express.Router();
 
 // Define route handler for the root path
 router.get("/", (req, res) => {
-  // Define JSON data to be returned
-  const jsonData = {
-    message: "Backend is working fine!",
-    timestamp: new Date().toISOString(),
-  };
+  // Log a message to indicate that the handler is being reached
+  console.log("Handling request for the root path (/) - Route found");
 
-  // Return JSON response
-  res.json(jsonData);
+  // Send a response indicating that the route was found
+  res.send("Route found");
 });
 
 router.use("/user", userRoutes); //api/user/login
