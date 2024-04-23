@@ -1,5 +1,9 @@
 import express from "express";
-import { isAdminRoute, protectRoute } from "../middlewares/authMiddlewave.js";
+import {
+  isAdminRoute,
+  login,
+  protectRoute,
+} from "../middlewares/authMiddlewave.js";
 import {
   activateUserProfile,
   changeUserPassword,
@@ -15,7 +19,7 @@ import {
 
 const router = express.Router();
 
-router.post("/registre", registerUser);
+router.post("/registre", registerUser, login);
 router.post("/login", loginUser);
 router.post("/logout", logoutUser);
 
