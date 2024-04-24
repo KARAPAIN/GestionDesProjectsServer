@@ -29,6 +29,7 @@ app.use(
 app.use((req, res, next) => {
   // Allow requests from specified origin
   res.setHeader('Access-Control-Allow-Origin', 'https://karapain.github.io');
+  res.setHeader('Access-Control-Allow-Origin', 'https://karapain.github.io/GestionDesProjectsPFE/');
 
   // Allow credentials to be sent with cross-origin requests
   res.setHeader('Access-Control-Allow-Credentials', 'true');
