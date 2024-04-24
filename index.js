@@ -25,7 +25,23 @@ app.use(
     credentials: true,
   })
 );
+// Set CORS headers middleware
+app.use((req, res, next) => {
+  // Allow requests from specified origin
+  res.setHeader('Access-Control-Allow-Origin', 'https://karapain.github.io');
 
+  // Allow credentials to be sent with cross-origin requests
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
+
+  // Allow only specific methods to be used for CORS
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
+
+  // Set other CORS headers as needed
+  // res.setHeader('Access-Control-Allow-Headers', 'Authorization, Content-Type');
+
+  // Continue to the next middleware
+  next();
+});
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
