@@ -16,6 +16,10 @@ export const createJWT = (res, userId) => {
     expiresIn: "1d",
   });
 
+  // Log the token cookie before setting it
+  console.log("Token Cookie:", token);
+  
+
   // Change sameSite from strict to none when you deploy your app
   res.cookie("token", token, {
     httpOnly: true,
