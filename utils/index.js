@@ -17,7 +17,7 @@ export const createJWT = (res, userId) => {
   });
 
   // Log the token cookie before setting it
-  console.log("Token Cookie:", token);
+  // console.log("Token Cookie:", token);
   
 
   // Change sameSite from strict to none when you deploy your app
@@ -29,6 +29,6 @@ export const createJWT = (res, userId) => {
   });
     // return token;
   // Log the response after setting the cookie
-  console.log("Response:", res);
+  // console.log("Response:", res);
 
 };
