@@ -69,9 +69,8 @@ export const loginUser = async (req, res) => {
       user.password = undefined;
   console.log("tokenInLogin:", token);
 
-      const { user, token } = result;
+            res.status(200).json({ user, token });
 
-      res.status(200).json(result);
 
       
     } else {
