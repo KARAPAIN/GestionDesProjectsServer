@@ -29,7 +29,7 @@ export const createJWT = (res, userId) => {
   });
   // Log the response after setting the cookie
   console.log("token:", token);
-      // return token;
+      return token;
 
 
 };
