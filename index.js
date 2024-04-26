@@ -14,6 +14,11 @@ dbConnection();
 const PORT = process.env.PORT || 5000;
 
 const app = express();
+const crypto = require("crypto");
+
+// Generate a secure random string for session secret
+const sessionSecret = crypto.randomBytes(64).toString("hex");
+
 
 app.use(
   cors({
@@ -36,5 +41,19 @@ app.use("/api", routes);
 
 app.use(routeNotFound);
 app.use(errorHandler);
+app.use(
+  session({
+    secret: sessionSecret,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 604800000, // one week
+      sameSite: "none",
+      secure: true,
+    },
+    store: store,
+  })
+);
+
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
