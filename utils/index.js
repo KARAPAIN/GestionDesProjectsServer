@@ -28,7 +28,7 @@ export const createJWT = (res, userId) => {
     maxAge: 1 * 24 * 60 * 60 * 1000, //1 day
   });
   // Log the response after setting the cookie
-  console.log("Response:", token);
+  console.log("token:", token);
       // return token;
 
 
