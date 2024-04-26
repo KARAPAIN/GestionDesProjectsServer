@@ -70,7 +70,11 @@ export const loginUser = async (req, res) => {
   console.log("tokenInLogin:", token);
 
       // Return the token along with user data
-      res.status(200).json({ user, token });
+            res.status(200).json(user);
+            res.status(200).json(token);
+
+
+      
     } else {
       return res
         .status(401)
