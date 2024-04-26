@@ -67,7 +67,7 @@ export const loginUser = async (req, res) => {
       const token = createJWT(res, user._id); // Get the token from createJWT
 
       user.password = undefined;
-  console.log("token:", token);
+  console.log("tokenInLogin:", token);
 
       // Return the token along with user data
       res.status(200).json({ user, token });
