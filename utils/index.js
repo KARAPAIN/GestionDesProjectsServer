@@ -32,7 +32,3 @@ export const createJWT = (res, userId) => {
 
   return token;
 };
-
-
-
-};
