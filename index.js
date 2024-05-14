@@ -14,7 +14,6 @@ dbConnection();
 const PORT = process.env.PORT || 5000;
 
 const app = express();
-app.options('*', cors()); // Handle preflight requests for all routes
 
 app.use(
   cors({
