@@ -16,20 +16,23 @@ export const createJWT = (res, userId) => {
     expiresIn: "1d",
   });
 
-  // Log the token cookie before setting it
-  // console.log("Token Cookie:", token);
-  
+  // Log the token
+  console.log("Generated token:", token);
 
-  // Change sameSite from strict to none when you deploy your app
-  res.cookie("token", token, {
+  // Set cookie options
+  const cookieOptions = {
     httpOnly: true,
-    secure: process.env.NODE_ENV !== "development",
-    sameSite: "strict", //prevent CSRF attack
-    maxAge: 1 * 24 * 60 * 60 * 1000, //1 day
-  });
-  // Log the response after setting the cookie
-  console.log("token:", token);
-      return token;
+    secure: process.env.NODE_ENV !== "development", // Set to true in production
+    sameSite: "None", // Allow cross-site requests
+    maxAge: 1 * 24 * 60 * 60 * 1000, // 1 day
+  };
+
+  // Set the cookie
+  res.cookie("token", token, cookieOptions);
+
+  return token;
+};
+
 
 
 };
