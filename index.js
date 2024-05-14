@@ -18,13 +18,6 @@ app.options('*', cors()); // Handle preflight requests for all routes
 
 app.use(
   cors({
-    origin: "https://karapain.github.io",
-    methods: ["GET", "POST", "DELETE", "PUT"],
-    credentials: true,
-  })
-);
-app.use(
-  cors({
     origin: ["http://localhost:3000", "http://localhost:3001", "https://karapain.github.io", "https://karapain.github.io/GestionDesProjectsPFE/",
             "https://karapain.github.io/GestionDesProjectsPFE"],
     methods: ["GET", "POST", "DELETE", "PUT"],
