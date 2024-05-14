@@ -18,11 +18,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://karapain.github.io",
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
 );
+
 app.set("trust proxy", 1);
 
 
