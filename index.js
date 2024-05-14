@@ -18,10 +18,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "http://localhost:3001", "https://karapain.github.io",
-      "https://karapain.github.io/GestionDesProjectsPFE/",
-      "https://karapain.github.io/GestionDesProjectsPFE",
-            ],
+    origin: "*",
     methods: ["GET", "POST", "DELETE", "PUT"],
     credentials: true,
   })
