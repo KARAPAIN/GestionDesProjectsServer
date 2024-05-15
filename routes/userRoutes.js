@@ -1,7 +1,6 @@
 import express from "express";
 import {
   isAdminRoute,
-  login,
   protectRoute,
 } from "../middlewares/authMiddlewave.js";
 import {
